@@ -15,7 +15,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    delete graphicWnd;
     delete ui;
 }
 
@@ -221,7 +220,6 @@ void MainWindow::on_pb_start_clicked()
         numberSelectChannel = 0xED;
     }
 
-    QLineSeries* lineSeries = new QLineSeries();
     auto read = [&]{ return ReadFile(pathToFile, numberSelectChannel); };
     auto process = [&](QVector<uint32_t> res){ return ProcessFile(res);};
     auto findMax = [&](QVector<double> res){

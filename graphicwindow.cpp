@@ -45,6 +45,7 @@ void GraphicWindow::UpdateGraphic(QMap<double, double> mapData)
     }
 
     chart->addSeries(mainLineSeries);
+    chart->createDefaultAxes();
 
     emit readyToShow();
 }
